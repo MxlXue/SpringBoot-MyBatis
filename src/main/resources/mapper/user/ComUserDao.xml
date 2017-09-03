@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.dao.user.ComUserDao">
+    <resultMap id="ComUser" type="com.example.enity.user.ComUser"></resultMap>
+    <select id="select" resultMap="ComUser" >
+        SELECT * FROM com_user c
+        WHERE 1=1
+        <if test="mobile!=null and mobile!=''">
+            AND c.mobile=${mobile}
+        </if>
+    </select>
+</mapper>
